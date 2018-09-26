@@ -44,6 +44,11 @@ class Color extends Component {
   }
   onClickHex = (evt) => {
     this.setState({
+     hex_color:"#"
+    })
+  }
+  onClickRgb = (evt) => {
+    this.setState({
       rgb_color:"rgb(,,)"
     })
   }
@@ -65,10 +70,10 @@ class Color extends Component {
       <div className="container-app" style={{backgroundColor: this.state.bg_color}}>
           <div className="form-colors">
               <div className="form-color-input">
-                  <input type="text" name="hex_color" placeholder="hex" autoComplete="off" value={this.state.hex_color} onChange={this.onChangeColor.bind(this)}/>
+                  <input type="text" name="hex_color" placeholder="hex" autoComplete="off" value={this.state.hex_color} onChange={this.onChangeColor.bind(this)} onClick={this.onClickHex.bind(this)}/>
               </div>
               <div className="form-color-input">
-                  <input type="text" name="rgb_color" placeholder="rgb" autoComplete="off" value={this.state.rgb_color} onChange={this.onChangeColor.bind(this)} onClick={this.onClickHex.bind(this)}/>
+                  <input type="text" name="rgb_color" placeholder="rgb" autoComplete="off" value={this.state.rgb_color} onChange={this.onChangeColor.bind(this)} onClick={this.onClickRgb.bind(this)}/>
               </div>
           </div>
           <div className="footer-copyright">
